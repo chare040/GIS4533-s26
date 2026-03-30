@@ -51,16 +51,30 @@
         // Initialize the map, center it on UMD campus, and set the zoom level
         const map = L.map('map').setView([46.82, -92.08], 13);
 
-        // Add OpenStreetMap tiles
-       L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
     maxZoom: 20,
     attribution: '© OpenStreetMap France | © OpenStreetMap contributors'
 }).addTo(map);
 
+// Remove this if you don't want the UMD marker
+// const marker = L.marker([46.82, -92.085]).addTo(map);
+// marker.bindPopup("<b>University of Minnesota Duluth</b><br>A great place to learn about GIS!");
 
-        // Add a marker for the UMD campus
-        const marker = L.marker([46.7833, -92.1002]).addTo(map)
+// Lake Superior Railroad Museum
+L.marker([46.7833, -92.1002]).addTo(map)
   .bindPopup("<b>Lake Superior Railroad Museum</b><br>Fun fact: It houses one of the largest collections of historic locomotives in the U.S.");
+
+// Marcus Duluth Cinema
+L.marker([46.7814, -92.1020]).addTo(map)
+  .bindPopup("<b>Marcus Duluth Cinema</b><br>Fun fact: It’s one of the only theaters in the region with full recliner seating.");
+
+// Aerial Lift Bridge (with image)
+L.marker([46.7785, -92.0933]).addTo(map)
+  .bindPopup(`
+      <b>Aerial Lift Bridge</b><br>
+      Fun fact: The bridge rises about 25 times per day during summer!<br>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Duluth_aerial_lift_bridge.jpg" width="180">
+  `);
 
     </script>
 </body>
