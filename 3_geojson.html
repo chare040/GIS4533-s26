@@ -131,8 +131,10 @@ function onEachFeature(feature, layer) {
         // (This variable must match the name you used when pasting your file)
         // ------------------------------------------------------------
         const attendanceLayer = L.geoJSON(duluth_school_attendance_areas, {
-            style: style
-        }).addTo(map);
+            style: style,
+            onEachFeature: onEachFeature
+            }).addTo(map);
+
 
         // ------------------------------------------------------------
         // Add attribution for the data source
