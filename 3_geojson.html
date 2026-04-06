@@ -91,19 +91,34 @@
             ]};
 
 
-        function getRandomColor() {
-            return "#" + Math.floor(Math.random() * 16777215).toString(16);
-        }
+        // ------------------------------------------------------------
+// STEP 3: Add custom styling to the attendance areas
+// ------------------------------------------------------------
 
-        function style(feature) {
-            return {
-                fillcolor: getRandomColor(),
-                weight: 2,
-                opacity: 1,
-                color: "#333",
-                fillOpacity: 0.6
-            };
-        }
+// Random pastel color generator
+function getRandomColor() {
+    const r = Math.floor((Math.random() * 127) + 127);
+    const g = Math.floor((Math.random() * 127) + 127);
+    const b = Math.floor((Math.random() * 127) + 127);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+// Style function for polygons
+function style(feature) {
+    return {
+        fillColor: getRandomColor(),
+        weight: 2,
+        opacity: 1,
+        color: "#555",      // lighter outline
+        fillOpacity: 0.6
+    };
+}
+
+// Add styled GeoJSON layer
+const attendanceLayer = L.geoJSON(duluth_school_attendance_areas, {
+    style: style
+}).addTo(map);
+
 
         
         // ------------------------------------------------------------
