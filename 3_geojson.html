@@ -56,10 +56,53 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
-    <style></style>
+    <style>
+        /* ---------------------------
+           STEP 5: PAGE LAYOUT + STYLE
+           --------------------------- */
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 10px;
+            background: #003f5c;
+            color: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            margin: 5px 0 0;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        /* Styled map container */
+        #map {
+            width: 80%;
+            height: 500px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <h1>Duluth Public School Attendance Areas</h1>
+        <h2>A Thematic Map of Elementary, Middle, and High School Boundaries</h2>
+    </header>
     <div id="map" style="width: 600px; height: 400px;"></div>
     
     <!-- Leaflet JavaScript -->
