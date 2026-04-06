@@ -176,13 +176,18 @@ function onEachFeature(feature, layer) {
     layer.bindPopup(popupHTML);
 }   
         // ------------------------------------------------------------
-        // Load the GeoJSON of Duluth school attendance areas
-        // (This variable must match the name you used when pasting your file)
+        // STEP 6: Add GeoJSON layer with styling + popups
         // ------------------------------------------------------------
         const attendanceLayer = L.geoJSON(duluth_school_attendance_areas, {
             style: style,
             onEachFeature: onEachFeature
-            }).addTo(map);
+        }).addTo(map);
+
+// ------------------------------------------------------------
+// STEP 6: Fit map to show all attendance areas
+// ------------------------------------------------------------
+map.fitBounds(attendanceLayer.getBounds());
+
 
 
         // ------------------------------------------------------------
